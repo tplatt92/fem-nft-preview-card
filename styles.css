@@ -1,60 +1,96 @@
-* {
+* , html {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
     font-size: 18px;
     font-family:'Outfit', sans-serif;
-    width: 100%;
-    height: 100vh;
     background-color: hsl(217, 54%, 11%);
-    color: hsl(215, 51%, 70%);
-    flex-direction: column;
+   
+    
 }
 
 .container {
-    max-width: 360px;
-    max-height: 720px;
+    max-width: 375px;
+    min-height: 100vh;
     margin: 0 auto;
-    background-color: hsl(216, 50%, 16%);
-    padding: 10px;
-    padding-top: 25px;
-    padding-bottom: 30px;
-    border-radius: 18px;
-    box-shadow: 0px 0px 10px 15px hsl(217, 54%, 11%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: hsl(215, 51%, 70%);
 }
 
 .card {
-    margin: 0 1em;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: hsl(216, 50%, 16%);
+    box-shadow: 0px 0px 10px 30px hsl(217, 54%, 10.5%);
 }
 
+/* Main Image CSS */
 
-
-.img1 {
+.main-image {
+    margin: 0 auto;
     width: 100%;
-    border-radius: 12px;
-}
-
-
-.img1:hover {
-    background: hsl(178, 100%, 50%);
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  
+  .img1 {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
     cursor: pointer;
-    opacity: 0.3;
-}
+    
+  }
 
-h2 {
+.overlay {
+    height: 50%;
+    max-width: 295px;
+    max-height: 304px;
+    width: 100%;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+  
+
+  .overlay:hover {
+    opacity: 100%;
+  }
+  
+
+/*Main Body CSS*/
+
+
+h1 {
     color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin: 1.25rem 0 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
-h2:hover, .creator:hover {
+h1:hover, .creator:hover {
     color:hsl(178, 100%, 50%);
     cursor: pointer;
+}
+
+.container-item1 > p {
+    line-height: 1.5;
+    font-weight: 300;
+
 }
 
 hr {
@@ -65,37 +101,47 @@ hr {
 
 .container-item2 {
     display: flex;
-    padding: 20px 0;
-   
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 15px;
+
    }
 
-.container-item2 > div {
+
+.sub-item {
     display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container-item2-p1 {
+    color: hsl(178, 100%, 50%);
+    font-weight: 600;
 }
 
 .icon1, .icon2 {
-    padding-right: 5px;
-    padding-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
+/*Footer CSS*/
 
-.sub-item-1 {
-    justify-content: flex-start;
-}
-
-.sub-item-2 {
-    justify-content: flex-end;
-    padding-left: 120px;
-}
 
 .card-footer {
     display: flex;
-    padding-top: 20px;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: solid 1px hsl(215, 32%, 27%);
+    font-size: 1rem;
+    align-items: center;
 
 }
 
 .text-footer {
     text-align: center;
+    font-weight: 300;
 }
 
 .creator {
@@ -110,7 +156,38 @@ hr {
 .img3 {
     border: 2px solid white;
     border-radius: 50%;
-    height: 25px;
-    width: 25px;
+    height: 32px;
+    width: 32px;
     margin-right: 10px;
 }
+
+.attribution {
+    position: fixed;
+    width: 100%;
+    bottom: 1rem;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+    .main-img {
+      height: 304px;
+    }
+
+    .main-img > img {
+        height: 100%;
+    }
+    
+    .container-item1 > p {
+      font-size: 18px;
+    }
+    .container-item2 {
+      margin: 20px 0;
+    }
+    .card-footer {
+      padding-bottom: 15px;
+    }
+  }
